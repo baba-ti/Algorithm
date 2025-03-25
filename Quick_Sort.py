@@ -8,7 +8,7 @@ def quick_sort_left_pivot(arr):
         left = low + 1
         right = high
 
-        print(f"\n[Partition 시작 - Left Pivot] 구간: {arr[low:high+1]}, Pivot: {pivot}")
+        print("\n[Partition 시작 - Left Pivot] 구간:", arr[low:high+1], ", Pivot:", pivot)
 
         while True:
             while left <= right and arr[left] < pivot:
@@ -26,14 +26,14 @@ def quick_sort_left_pivot(arr):
             if left >= right:
                 break
 
-            print(f"  → Swap: {arr[left]} <-> {arr[right]}")
+            print("  → Swap:", arr[left], "<->", arr[right])
             arr[left], arr[right] = arr[right], arr[left]
             left += 1
             right -= 1
 
-        print(f"  → Pivot swap: {arr[low]} <-> {arr[right]}")
+        print("  → Pivot swap:", arr[low], "<->", arr[right])
         arr[low], arr[right] = arr[right], arr[low]
-        print(f"[Partition 완료] 결과: {arr[low:high+1]}")
+        print("[Partition 완료] 결과:", arr[low:high+1])
         return right
 
     def sort(low, high):
@@ -51,13 +51,12 @@ def quick_sort_right_pivot(arr):
     comparisons = [0]
 
     def partition(low, high):
-        # 오른쪽 피벗을 앞으로 이동
         arr[low], arr[high] = arr[high], arr[low]
         pivot = arr[low]
         left = low + 1
         right = high
 
-        print(f"\n[Partition 시작 - Right Pivot] 구간: {arr[low:high+1]}, Pivot: {pivot}")
+        print("\n[Partition 시작 - Right Pivot] 구간:", arr[low:high+1], ", Pivot:", pivot)
 
         while True:
             while left <= right and arr[left] < pivot:
@@ -75,14 +74,14 @@ def quick_sort_right_pivot(arr):
             if left >= right:
                 break
 
-            print(f"  → Swap: {arr[left]} <-> {arr[right]}")
+            print("  → Swap:", arr[left], "<->", arr[right])
             arr[left], arr[right] = arr[right], arr[left]
             left += 1
             right -= 1
 
-        print(f"  → Pivot swap: {arr[low]} <-> {arr[right]}")
+        print("  → Pivot swap:", arr[low], "<->", arr[right])
         arr[low], arr[right] = arr[right], arr[low]
-        print(f"[Partition 완료] 결과: {arr[low:high+1]}")
+        print("[Partition 완료] 결과:", arr[low:high+1])
         return right
 
     def sort(low, high):
@@ -118,7 +117,7 @@ def quick_sort_median_pivot(arr):
         left = low + 1
         right = high
 
-        print(f"\n[Partition 시작 - Median Pivot] 구간: {arr[low:high+1]}, Pivot: {pivot}")
+        print("\n[Partition 시작 - Median Pivot] 구간:", arr[low:high+1], ", Pivot:", pivot)
 
         while True:
             while left <= right and arr[left] < pivot:
@@ -136,14 +135,14 @@ def quick_sort_median_pivot(arr):
             if left >= right:
                 break
 
-            print(f"  → Swap: {arr[left]} <-> {arr[right]}")
+            print("  → Swap:", arr[left], "<->", arr[right])
             arr[left], arr[right] = arr[right], arr[left]
             left += 1
             right -= 1
 
-        print(f"  → Pivot swap: {arr[low]} <-> {arr[right]}")
+        print("  → Pivot swap:", arr[low], "<->", arr[right])
         arr[low], arr[right] = arr[right], arr[low]
-        print(f"[Partition 완료] 결과: {arr[low:high+1]}")
+        print("[Partition 완료] 결과:", arr[low:high+1])
         return right
 
     def sort(low, high):
@@ -162,13 +161,12 @@ if __name__ == "__main__":
 
     print("\n --- 왼쪽 기준 Quick Sort ---")
     result, count = quick_sort_left_pivot(sample)
-    print(f"\n정렬 결과: {result}, 비교 횟수: {count}")
+    print("\n정렬 결과:", result, ", 비교 횟수:", count)
 
-    print("\n--- 오른쪽 기준준 Pivot Quick Sort ---")
+    print("\n--- 오른쪽 기준 Pivot Quick Sort ---")
     result, count = quick_sort_right_pivot(sample)
-    print(f"\n정렬 결과: {result}, 비교 횟수: {count}")
+    print("\n정렬 결과:", result, ", 비교 횟수:", count)
 
     print("\n--- 중간값 기준 Pivot Quick Sort ---")
     result, count = quick_sort_median_pivot(sample)
-    print(f"\n정렬 결과: {result}, 비교 횟수: {count}")
-
+    print("\n정렬 결과:", result, ", 비교 횟수:", count)
