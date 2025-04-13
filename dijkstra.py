@@ -18,9 +18,9 @@ def dijkstra(graph, start):
         distances[new_destination] = distance
         heapq.heappush(queue, [distance, new_destination])  # 다음 인접 거리를 계산 하기 위해 큐에 삽입
     
-  return distances
+  return  
 
-graph = {
+graph = { #그래프 수정 후 사용 가능
     'A': {'B': 2, 'C': 5, 'D': 1},
     'B': {'A': 1,'C':3, 'D':2},
     'C': {'A': 5, 'B': 3, 'D':3,'E':1,'F':5},
