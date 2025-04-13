@@ -153,8 +153,7 @@ def quick_sort_median_pivot(arr):
 
     sort(0, len(arr) - 1)
     return arr, comparisons[0]
-
-
+ 
 # main 부분
 if __name__ == "__main__":
     sample = [6, 11, 42, 26, 31, 41, 16, 4, 8, 51]
